@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Board from './board.js';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import PlayArea from './playArea.js';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function Game() {
+  return (
+    <div id="game-wrap">
+      <div id="board-area">
+        <Board />
+      </div>
+      <PlayArea />
+    </div>
+  );
+}
+
+// ==========================================================
+
+ReactDOM.render(<Game />, document.getElementById('root'));
