@@ -52,3 +52,23 @@ export function deal(deck) {
 
   return playerHand;
 }
+
+export function playCard(card, hand, deck) {
+  const findCard = (element) =>
+    element.value === card.value && element.suit === card.suit;
+  const index = hand.findIndex(findCard);
+
+  //remove card from index using slice, splice mutates we dont want that no
+  //filter doesnt seem to work cant get it to just get rid of one card
+  const firstHalf = hand.slice(0, index);
+  const secondHalf = hand.slice(index + 1, hand.length);
+  const removedHand = firstHalf.concat(secondHalf);
+
+  //pop card from deck and add to hand
+  const [newCard] = deck.slice(0, 1);
+  const newHand = [...removedHand, newCard];
+  const newDeck = deck.slice(1, deck.length);
+  //return new hand and new deck
+
+  return [newHand, newDeck];
+}

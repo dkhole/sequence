@@ -24,17 +24,22 @@ function PlayerHand(props) {
 export default function PlayArea(props) {
   const [gameStart, setStart] = useState(false);
 
-  function clickPlay() {
+  function clickPlay(e) {
     setStart(true);
 
-    const deck = Deck.getDeck();
-    const shuffledDeck = Deck.shuffle(deck);
+    const newDeck = Deck.getDeck();
+    const shuffledDeck = Deck.shuffle(newDeck);
     const player1Hand = Deck.deal(shuffledDeck);
     const player2Hand = Deck.deal(shuffledDeck);
 
-    props.setPlayer1({ ...props.player1, hand: player1Hand });
-    props.setPlayer2({ ...props.player2, hand: player2Hand });
-    props.setCurrent({ hand: player1Hand, p: 1 });
+    //get input colors
+    const p1Col = e.target.parentElement.children[2].value;
+    const p2Col = e.target.parentElement.children[3].value;
+
+    props.setPlayer1({ ...props.player1, hand: player1Hand, col: p1Col });
+    props.setPlayer2({ ...props.player2, hand: player2Hand, col: p2Col });
+    props.updateDeck(shuffledDeck);
+    props.setCurrent({ hand: player1Hand, p: 1, col: p1Col });
   }
 
   function clickCard(e) {
@@ -46,6 +51,18 @@ export default function PlayArea(props) {
     const cardName = name.concat(symbol);
     props.setSelected(cardName);
   }
+
+  /*function changeCol(e) {
+    const color = e.target.value;
+
+    if (props.currPlayer.p === 1) {
+      props.setPlayer1({ ...props.player1, col: color });
+    } else {
+      props.setPlayer2({ ...props.player1, col: color });
+    }
+
+    props.setCurrent({ ...props.currPlayer, col: color });
+  }*/
 
   if (gameStart === true) {
     console.log(props.currPlayer);
@@ -64,6 +81,8 @@ export default function PlayArea(props) {
         Use your cards to place checkers onto the board.<br></br> Link 5
         checkers in a row to get a point, first to 2 points win.
       </div>
+      <input type="color" id="p1-col" defaultValue="#00ff1e"></input>
+      <input type="color" id="p2-col" defaultValue="#FF00D7"></input>
       <button id="play-now" onClick={clickPlay}>
         Play Now
       </button>
