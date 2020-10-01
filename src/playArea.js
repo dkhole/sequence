@@ -1,41 +1,58 @@
 import React, { useState } from 'react';
 import * as Deck from './deck.js';
+import Card from './card.js';
 
 function PlayerHand(props) {
-  for (let i = 0; i < 7; i++) {
-    return <div>{props.player.hand[i].value}</div>;
-  }
+  //put all symbols into key-value tree? maybe add through css
+  //card spades-2
+  return (
+    <div id="player-hand">
+      {props.currPlayer.hand.map((card, index) => {
+        let cardClass = 'player-card ';
+        cardClass = cardClass.concat(card.suit);
+        cardClass = cardClass.concat('-');
+        cardClass = cardClass.concat(card.value);
+
+        return (
+          <Card className={cardClass} key={index} clickCard={props.clickCard} />
+        );
+      })}
+    </div>
+  );
 }
 
-export default function PlayArea() {
+export default function PlayArea(props) {
   const [gameStart, setStart] = useState(false);
-  const [player1Turn, setPlayer1Turn] = useState(false);
-  const [player1, setPlayer1] = useState({ hand: [], p: 1 });
-  const [player2, setPlayer2] = useState({ hand: [], p: 2 });
 
   function clickPlay() {
     setStart(true);
-    setPlayer1Turn(true);
 
     const deck = Deck.getDeck();
     const shuffledDeck = Deck.shuffle(deck);
+    const player1Hand = Deck.deal(shuffledDeck);
+    const player2Hand = Deck.deal(shuffledDeck);
 
-    setPlayer1({ ...player1, hand: Deck.deal(shuffledDeck) });
-    setPlayer2({ ...player2, hand: Deck.deal(shuffledDeck) });
+    props.setPlayer1({ ...props.player1, hand: player1Hand });
+    props.setPlayer2({ ...props.player2, hand: player2Hand });
+    props.setCurrent({ hand: player1Hand, p: 1 });
   }
 
-  let player;
-  if (player1Turn) {
-    player = player1;
-  } else {
-    player = player2;
+  function clickCard(e) {
+    const name = 'card ';
+    const symbol = e.target.parentElement.className.slice(
+      12,
+      e.target.parentElement.className.length
+    );
+    const cardName = name.concat(symbol);
+    props.setSelected(cardName);
   }
 
   if (gameStart === true) {
+    console.log(props.currPlayer);
     return (
       <div id="play-area">
-        <div id="play-title">{`PLAYER ${player.p}`}</div>
-        <PlayerHand player={player} />
+        <div id="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
+        <PlayerHand currPlayer={props.currPlayer} clickCard={clickCard} />
       </div>
     );
   }

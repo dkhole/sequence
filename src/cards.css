@@ -1,0 +1,325 @@
+/** STYLING AND ICONS FOR CARDS **/
+.corner {
+  color: blue;
+}
+
+.hearts,
+.diamonds {
+  color: red;
+}
+
+.corner > .symbol::before {
+  content: '🃟';
+}
+
+.spades-a > .symbol::before {
+  content: '🂡';
+}
+
+.spades-2 > .symbol::before {
+  content: '🂢';
+}
+
+.spades-3 > .symbol::before {
+  content: '🂣';
+}
+
+.spades-4 > .symbol::before {
+  content: '🂤';
+}
+
+.spades-5 > .symbol::before {
+  content: '🂥';
+}
+
+.spades-6 > .symbol::before {
+  content: '🂦';
+}
+
+.spades-7 > .symbol::before {
+  content: '🂧';
+}
+
+.spades-8 > .symbol::before {
+  content: '🂨';
+}
+
+.spades-9 > .symbol::before {
+  content: '🂩';
+}
+
+.spades-10 > .symbol::before {
+  content: '🂪';
+}
+
+.spades-j > .symbol::before {
+  content: '🂫';
+}
+
+.spades-q > .symbol::before {
+  content: '🂭';
+}
+
+.spades-k > .symbol::before {
+  content: '🂮';
+}
+
+.clubs-a > .symbol::before {
+  content: '🃑';
+}
+
+.clubs-2 > .symbol::before {
+  content: '🃒';
+}
+
+.clubs-3 > .symbol::before {
+  content: '🃓';
+}
+
+.clubs-4 > .symbol::before {
+  content: '🃔';
+}
+
+.clubs-5 > .symbol::before {
+  content: '🃕';
+}
+
+.clubs-6 > .symbol::before {
+  content: '🃖';
+}
+
+.clubs-7 > .symbol::before {
+  content: '🃗';
+}
+
+.clubs-8 > .symbol::before {
+  content: '🃘';
+}
+
+.clubs-9 > .symbol::before {
+  content: '🃙';
+}
+
+.clubs-10 > .symbol::before {
+  content: '🃚';
+}
+
+.clubs-j > .symbol::before {
+  content: '🃛';
+}
+
+.clubs-q > .symbol::before {
+  content: '🃝';
+}
+
+.clubs-k > .symbol::before {
+  content: '🃞';
+}
+
+.hearts-a > .symbol::before {
+  content: '🂱';
+}
+
+.hearts-a {
+  color: red;
+}
+
+.hearts-2 > .symbol::before {
+  content: '🂲';
+}
+
+.hearts-2 {
+  color: red;
+}
+
+.hearts-3 > .symbol::before {
+  content: '🂳';
+}
+
+.hearts-3 {
+  color: red;
+}
+
+.hearts-4 > .symbol::before {
+  content: '🂴';
+}
+
+.hearts-4 {
+  color: red;
+}
+
+.hearts-5 > .symbol::before {
+  content: '🂵';
+}
+
+.hearts-5 {
+  color: red;
+}
+
+.hearts-6 > .symbol::before {
+  content: '🂶';
+}
+
+.hearts-6 {
+  color: red;
+}
+
+.hearts-7 > .symbol::before {
+  content: '🂷';
+}
+
+.hearts-7 {
+  color: red;
+}
+
+.hearts-8 > .symbol::before {
+  content: '🂸';
+}
+
+.hearts-8 {
+  color: red;
+}
+
+.hearts-9 > .symbol::before {
+  content: '🂹';
+}
+
+.hearts-9 {
+  color: red;
+}
+
+.hearts-10 > .symbol::before {
+  content: '🂺';
+}
+
+.hearts-10 {
+  color: red;
+}
+
+.hearts-j > .symbol::before {
+  content: '🂻';
+}
+
+.hearts-j {
+  color: red;
+}
+
+.hearts-q > .symbol::before {
+  content: '🂽';
+}
+
+.hearts-q {
+  color: red;
+}
+
+.hearts-k > .symbol::before {
+  content: '🂾';
+}
+
+.hearts-k {
+  color: red;
+}
+
+.diamonds-a > .symbol::before {
+  content: '🃁';
+}
+
+.diamonds-a {
+  color: red;
+}
+
+.diamonds-2 > .symbol::before {
+  content: '🃂';
+}
+
+.diamonds-2 {
+  color: red;
+}
+
+.diamonds-3 > .symbol::before {
+  content: '🃃';
+}
+
+.diamonds-3 {
+  color: red;
+}
+
+.diamonds-4 > .symbol::before {
+  content: '🃄';
+}
+
+.diamonds-4 {
+  color: red;
+}
+
+.diamonds-5 > .symbol::before {
+  content: '🃅';
+}
+
+.diamonds-5 {
+  color: red;
+}
+
+.diamonds-6 > .symbol::before {
+  content: '🃆';
+}
+
+.diamonds-6 {
+  color: red;
+}
+
+.diamonds-7 > .symbol::before {
+  content: '🃇';
+}
+
+.diamonds-7 {
+  color: red;
+}
+
+.diamonds-8 > .symbol::before {
+  content: '🃈';
+}
+
+.diamonds-8 {
+  color: red;
+}
+
+.diamonds-9 > .symbol::before {
+  content: '🃉';
+}
+
+.diamonds-9 {
+  color: red;
+}
+
+.diamonds-10 > .symbol::before {
+  content: '🃊';
+}
+
+.diamonds-10 {
+  color: red;
+}
+
+.diamonds-j > .symbol::before {
+  content: '🃋';
+}
+
+.diamonds-j {
+  color: red;
+}
+
+.diamonds-q > .symbol::before {
+  content: '🃍';
+}
+
+.diamonds-q {
+  color: red;
+}
+
+.diamonds-k > .symbol::before {
+  content: '🃎';
+}
+
+.diamonds-k {
+  color: red;
+}
