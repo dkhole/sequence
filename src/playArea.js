@@ -14,7 +14,13 @@ function PlayerHand(props) {
         cardClass = cardClass.concat(card.value);
 
         return (
-          <Card className={cardClass} key={index} clickCard={props.clickCard} />
+          <Card
+            className={cardClass}
+            key={index}
+            clickCard={props.clickCard}
+            circleClass={props.circleClass}
+            setCircleClass={props.setCircleClass}
+          />
         );
       })}
     </div>
@@ -48,8 +54,27 @@ export default function PlayArea(props) {
       12,
       e.target.parentElement.className.length
     );
-    const cardName = name.concat(symbol);
-    props.setSelected(cardName);
+
+    props.setCircleClass('circle');
+    //if card name is jack add event listener to chips? removal.
+    if (
+      symbol.charAt(symbol.length - 1) === 'j' &&
+      (symbol.includes('diamonds') || symbol.includes('hearts'))
+    ) {
+      alert('Select a chip to remove or choose another card');
+      props.setCircleClass('circle-rem');
+    }
+
+    if (
+      symbol.charAt(symbol.length - 1) === 'j' &&
+      (symbol.includes('spades') || symbol.includes('clubs'))
+    ) {
+      alert('Place a chip wherever you please');
+      props.setSelected('all');
+    } else {
+      const cardName = name.concat(symbol);
+      props.setSelected(cardName);
+    }
   }
 
   /*function changeCol(e) {
@@ -65,11 +90,16 @@ export default function PlayArea(props) {
   }*/
 
   if (gameStart === true) {
-    console.log(props.currPlayer);
     return (
       <div id="play-area">
         <div id="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
-        <PlayerHand currPlayer={props.currPlayer} clickCard={clickCard} />
+        <div id="deck-count">{`Remaining in deck: ${props.deck.length}`}</div>
+        <PlayerHand
+          currPlayer={props.currPlayer}
+          clickCard={clickCard}
+          circleClass={props.circleClass}
+          setCircleClass={props.setCircleClass}
+        />
       </div>
     );
   }

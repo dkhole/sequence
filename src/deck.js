@@ -56,6 +56,7 @@ export function deal(deck) {
 export function playCard(card, hand, deck) {
   const findCard = (element) =>
     element.value === card.value && element.suit === card.suit;
+
   const index = hand.findIndex(findCard);
 
   //remove card from index using slice, splice mutates we dont want that no

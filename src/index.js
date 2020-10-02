@@ -20,6 +20,7 @@ function Game() {
     col: '',
   });
   const [currPlayer, setCurrent] = useState(player1);
+  const [circleClass, setCircleClass] = useState('circle');
 
   return (
     <div id="game-wrap">
@@ -35,6 +36,8 @@ function Game() {
           player2={player2}
           deck={deck}
           updateDeck={updateDeck}
+          circleClass={circleClass}
+          setCircleClass={setCircleClass}
         />
       </div>
       <PlayArea
@@ -47,6 +50,8 @@ function Game() {
         setPlayer2={setPlayer2}
         deck={deck}
         updateDeck={updateDeck}
+        circleClass={circleClass}
+        setCircleClass={setCircleClass}
       />
     </div>
   );
