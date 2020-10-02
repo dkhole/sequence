@@ -1,11 +1,10 @@
 /** STYLING AND ICONS FOR CARDS **/
-.corner {
-  color: blue;
-}
 
-.hearts,
-.diamonds {
-  color: red;
+:root {
+  --main-redCard-col: rgb(255, 61, 61);
+}
+.corner {
+  color: rgb(3, 189, 3);
 }
 
 .corner > .symbol::before {
@@ -121,7 +120,7 @@
 }
 
 .hearts-a {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-2 > .symbol::before {
@@ -129,7 +128,7 @@
 }
 
 .hearts-2 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-3 > .symbol::before {
@@ -137,7 +136,7 @@
 }
 
 .hearts-3 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-4 > .symbol::before {
@@ -145,7 +144,7 @@
 }
 
 .hearts-4 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-5 > .symbol::before {
@@ -153,7 +152,7 @@
 }
 
 .hearts-5 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-6 > .symbol::before {
@@ -161,7 +160,7 @@
 }
 
 .hearts-6 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-7 > .symbol::before {
@@ -169,7 +168,7 @@
 }
 
 .hearts-7 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-8 > .symbol::before {
@@ -177,7 +176,7 @@
 }
 
 .hearts-8 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-9 > .symbol::before {
@@ -185,7 +184,7 @@
 }
 
 .hearts-9 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-10 > .symbol::before {
@@ -193,7 +192,7 @@
 }
 
 .hearts-10 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-j > .symbol::before {
@@ -201,7 +200,7 @@
 }
 
 .hearts-j {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-q > .symbol::before {
@@ -209,7 +208,7 @@
 }
 
 .hearts-q {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .hearts-k > .symbol::before {
@@ -217,7 +216,7 @@
 }
 
 .hearts-k {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-a > .symbol::before {
@@ -225,7 +224,7 @@
 }
 
 .diamonds-a {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-2 > .symbol::before {
@@ -233,7 +232,7 @@
 }
 
 .diamonds-2 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-3 > .symbol::before {
@@ -241,7 +240,7 @@
 }
 
 .diamonds-3 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-4 > .symbol::before {
@@ -249,7 +248,7 @@
 }
 
 .diamonds-4 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-5 > .symbol::before {
@@ -257,7 +256,7 @@
 }
 
 .diamonds-5 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-6 > .symbol::before {
@@ -265,7 +264,7 @@
 }
 
 .diamonds-6 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-7 > .symbol::before {
@@ -273,7 +272,7 @@
 }
 
 .diamonds-7 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-8 > .symbol::before {
@@ -281,7 +280,7 @@
 }
 
 .diamonds-8 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-9 > .symbol::before {
@@ -289,7 +288,7 @@
 }
 
 .diamonds-9 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-10 > .symbol::before {
@@ -297,7 +296,7 @@
 }
 
 .diamonds-10 {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-j > .symbol::before {
@@ -305,7 +304,7 @@
 }
 
 .diamonds-j {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-q > .symbol::before {
@@ -313,7 +312,7 @@
 }
 
 .diamonds-q {
-  color: red;
+  color: var(--main-redCard-col);
 }
 
 .diamonds-k > .symbol::before {
@@ -321,5 +320,5 @@
 }
 
 .diamonds-k {
-  color: red;
+  color: var(--main-redCard-col);
 }

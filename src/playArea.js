@@ -88,7 +88,6 @@ export default function PlayArea(props) {
 
     props.setCurrent({ ...props.currPlayer, col: color });
   }*/
-
   if (gameStart === true) {
     return (
       <div id="play-area">

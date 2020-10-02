@@ -6,7 +6,14 @@ import Board from './board.js';
 
 import PlayArea from './playArea.js';
 
+const virtBoard = new Array(10);
+
+for (let i = 0; i < 10; i++) {
+  virtBoard[i] = new Array(10);
+}
+
 function Game() {
+  const [simBoard, setSimBoard] = useState(virtBoard);
   const [selected, setSelected] = useState('');
   const [deck, updateDeck] = useState([]);
   const [player1, setPlayer1] = useState({
@@ -38,6 +45,8 @@ function Game() {
           updateDeck={updateDeck}
           circleClass={circleClass}
           setCircleClass={setCircleClass}
+          simBoard={simBoard}
+          setSimBoard={setSimBoard}
         />
       </div>
       <PlayArea

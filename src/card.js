@@ -51,18 +51,33 @@ export default function Card(props) {
 
   function placeChip(e) {
     //place chip, play card and draw from deck. reset selected, change turn
-
+    e.stopPropagation();
+    if (taken) {
+      return;
+    }
     e.target.parentElement.children[1].style.visibility = 'visible';
     setCol(props.currPlayer.col);
 
     let card = {};
+    let current = e.target.parentElement;
+    let cardIndex = 0;
+
+    while ((current = current.previousSibling) != null) {
+      cardIndex++;
+    }
+
+    const iString = cardIndex.toString();
+    const row = parseInt(iString.charAt(0));
+    const col = parseInt(iString.charAt(1));
+
+    const board = props.simBoard.slice();
 
     if (props.selected === 'all') {
       for (let i = 0; i < props.currPlayer.hand.length; i++) {
         if (
           props.currPlayer.hand[i].value === 'j' &&
-          (props.currPlayer.hand[i].suit === 'hearts' ||
-            props.currPlayer.hand[i].suit === 'diamonds')
+          (props.currPlayer.hand[i].suit === 'spades' ||
+            props.currPlayer.hand[i].suit === 'clubs')
         ) {
           card = props.currPlayer.hand[i];
           break;
@@ -74,12 +89,18 @@ export default function Card(props) {
 
     if (props.currPlayer.p === 1) {
       const [newHand, newDeck] = playCard(card, props.player1.hand, props.deck);
+      board[row][col] = 0;
       //update hand and deck
+
+      props.setSimBoard(board);
       props.updateDeck(newDeck);
       props.setPlayer1({ ...props.player1, hand: newHand });
       props.setCurrent(props.player2);
     } else {
       const [newHand, newDeck] = playCard(card, props.player2.hand, props.deck);
+      board[row][col] = 1;
+
+      props.setSimBoard(board);
       props.updateDeck(newDeck);
       props.setPlayer2({ ...props.player2, hand: newHand });
       props.setCurrent(props.player1);
@@ -94,6 +115,7 @@ export default function Card(props) {
   ) {
     styleSelected.color = 'yellow';
     styleSelected.cursor = 'pointer';
+
     return (
       <div
         className={props.className}
