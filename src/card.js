@@ -102,22 +102,26 @@ export default function Card(props) {
 
       props.setSimBoard(board);
       props.updateDeck(newDeck);
-      props.setPlayer1({ ...props.player1, hand: newHand });
       props.setCurrent(props.player2);
 
-      //have to add points to player and update according to return value of check point
-      checkPoint(board, row, col);
+      //have to update checkpoint to return [points, completed], then store completed in a hook
+      //add a useeffect to hook so that whenever its updated every card from completed has a changed class name
+      const points = props.player1.points + checkPoint(board, row, col);
+      console.log('points1:' + points);
+      props.setPlayer1({ ...props.player1, hand: newHand, points: points });
     } else {
       const [newHand, newDeck] = playCard(card, props.player2.hand, props.deck);
       board[row][col] = 1;
 
       props.setSimBoard(board);
       props.updateDeck(newDeck);
-      props.setPlayer2({ ...props.player2, hand: newHand });
       props.setCurrent(props.player1);
 
-      //have to add points to player and update according to return value of check point
-      checkPoint(board, row, col);
+      //have to update checkpoint to return [points, completed], then store completed in a hook
+      //add a useeffect to hook so that whenever its updated every card from completed has a changed class name
+      const points = props.player2.points + checkPoint(board, row, col);
+      console.log('points2:' + points);
+      props.setPlayer2({ ...props.player2, hand: newHand, points: points });
     }
     setTaken(true);
     props.setSelected('');

@@ -13,7 +13,7 @@ for (let i = 0; i < 10; i++) {
   virtBoard[i] = new Array(10);
 }
 
-virtBoard[3][3] = 0;
+/*virtBoard[3][3] = 0;
 virtBoard[2][2] = 0;
 
 virtBoard[4][4] = 0;
@@ -39,7 +39,7 @@ virtBoard[4][3] = 0;
 virtBoard[4][5] = 0;
 virtBoard[4][6] = 0;
 
-console.log(checkPoint(virtBoard, 4, 4));
+console.log(checkPoint(virtBoard, 4, 4));*/
 
 function Game() {
   const [simBoard, setSimBoard] = useState(virtBoard);
@@ -49,11 +49,13 @@ function Game() {
     hand: [],
     p: 1,
     col: '',
+    points: 0,
   });
   const [player2, setPlayer2] = useState({
     hand: [],
     p: 2,
     col: '',
+    points: 0,
   });
   const [currPlayer, setCurrent] = useState(player1);
   const [circleClass, setCircleClass] = useState('circle');

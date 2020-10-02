@@ -37,8 +37,27 @@ export default function PlayArea(props) {
 
     const newDeck = Deck.getDeck();
     const shuffledDeck = Deck.shuffle(newDeck);
-    const player1Hand = Deck.deal(shuffledDeck);
-    const player2Hand = Deck.deal(shuffledDeck);
+    //const player1Hand = Deck.deal(shuffledDeck);
+    //const player2Hand = Deck.deal(shuffledDeck);
+
+    const player1Hand = [
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+    ];
+    const player2Hand = [
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'spades' },
+    ];
 
     //get input colors
     const p1Col = e.target.parentElement.children[2].value;
@@ -111,6 +130,8 @@ export default function PlayArea(props) {
       <div id="play-area">
         <div id="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
         <div id="deck-count">{`Remaining in deck: ${props.deck.length}`}</div>
+        <div id="p1-points">P1: {props.player1.points}</div>
+        <div id="p2-points">P2: {props.player2.points}</div>
         <PlayerHand
           handClass={handClass}
           currPlayer={props.currPlayer}

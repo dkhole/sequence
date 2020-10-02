@@ -75,6 +75,16 @@ body,
   cursor: pointer;
 }
 
+#p1-points {
+  position: relative;
+  top: 450px;
+}
+
+#p2-points {
+  position: relative;
+  top: 450px;
+}
+
 #play-now {
   position: relative;
   top: 600px;

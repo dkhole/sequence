@@ -2,10 +2,17 @@
 
 function checkCol(board, row, col, current) {
   let count = 1;
+  let complete = new Array(5);
+  let index = 0;
+
+  complete[index] = { row: row, col: col };
+  index++;
 
   for (let i = 1; i < 5; i++) {
     if (row + i <= 9) {
       if (board[row + i][col] === current) {
+        complete[index] = { row: row + i, col: col };
+        index++;
         count++;
       } else {
         break;
@@ -16,6 +23,8 @@ function checkCol(board, row, col, current) {
   for (let i = 1; i < 5; i++) {
     if (row - i >= 0) {
       if (board[row - i][col] === current) {
+        complete[index] = { row: row - i, col: col };
+        index++;
         count++;
       } else {
         break;
@@ -24,17 +33,25 @@ function checkCol(board, row, col, current) {
   }
 
   if (count >= 5) {
-    return 1;
+    return [1, complete];
   } else {
-    return 0;
+    return [0, null];
   }
 }
 
 function checkRow(board, row, col, current) {
   let count = 1;
+  let complete = new Array(5);
+  let index = 0;
+
+  complete[index] = { row: row, col: col };
+  index++;
+
   for (let i = 1; i < 5; i++) {
     if (col + i <= 9) {
       if (board[row][col + i] === current) {
+        complete[index] = { row: row, col: col + i };
+        index++;
         count++;
       } else {
         break;
@@ -45,6 +62,8 @@ function checkRow(board, row, col, current) {
   for (let i = 1; i < 5; i++) {
     if (col - i >= 0) {
       if (board[row][col - i] === current) {
+        complete[index] = { row: row, col: col - i };
+        index++;
         count++;
       } else {
         break;
@@ -53,18 +72,25 @@ function checkRow(board, row, col, current) {
   }
 
   if (count >= 5) {
-    return 1;
+    return [1, complete];
   } else {
-    return 0;
+    return [0, null];
   }
 }
 
 function checkDiagonalX(board, row, col, current) {
   let count = 1;
+  let complete = new Array(5);
+  let index = 0;
+
+  complete[index] = { row: row, col: col };
+  index++;
   //top right (-row, +col)
   for (let i = 1; i < 5; i++) {
     if (col + i <= 9 && row - i >= 0) {
       if (board[row - i][col + i] === current) {
+        complete[index] = { row: row - i, col: col + i };
+        index++;
         count++;
       } else {
         break;
@@ -76,6 +102,8 @@ function checkDiagonalX(board, row, col, current) {
   for (let i = 1; i < 5; i++) {
     if (col - i >= 0 && row + i <= 9) {
       if (board[row + i][col - i] === current) {
+        complete[index] = { row: row + i, col: col - i };
+        index++;
         count++;
       } else {
         break;
@@ -84,18 +112,26 @@ function checkDiagonalX(board, row, col, current) {
   }
 
   if (count >= 5) {
-    return 1;
+    return [1, complete];
   } else {
-    return 0;
+    return [0, null];
   }
 }
 
 function checkDiagonalY(board, row, col, current) {
   let count = 1;
+  let complete = new Array(5);
+  let index = 0;
+
+  complete[index] = { row: row, col: col };
+  index++;
+
   //top left (-row, -col)
   for (let i = 1; i < 5; i++) {
     if (col - i >= 0 && row - i >= 0) {
       if (board[row - i][col - i] === current) {
+        complete[index] = { row: row - i, col: col - i };
+        index++;
         count++;
       } else {
         break;
@@ -107,6 +143,8 @@ function checkDiagonalY(board, row, col, current) {
   for (let i = 1; i < 5; i++) {
     if (col + i <= 9 && row + i <= 9) {
       if (board[row + i][col + i] === current) {
+        complete[index] = { row: row + i, col: col + i };
+        index++;
         count++;
       } else {
         break;
@@ -115,29 +153,57 @@ function checkDiagonalY(board, row, col, current) {
   }
 
   if (count >= 5) {
-    return 1;
+    return [1, complete];
   } else {
-    return 0;
+    return [0, null];
   }
 }
 
 export default function checkPoint(board, row, col) {
   const current = board[row][col];
+  let pointPositions = [];
   //count is 1 as it includes placed checker
   let count = 0;
   //check col, row, diagonal
   console.table(board);
 
   //check col
-  count = count + checkCol(board, row, col, current);
+  const [colResult, completeCol] = checkCol(board, row, col, current);
+
+  count = count + colResult;
+
+  if (completeCol) {
+    pointPositions.push(completeCol);
+  }
 
   //check row
-  count = count + checkRow(board, row, col, current);
+  const [rowResult, completeRow] = checkRow(board, row, col, current);
+
+  count = count + rowResult;
+
+  if (completeRow) {
+    pointPositions.push(completeRow);
+  }
 
   //check diagonals
-  count = count + checkDiagonalX(board, row, col, current);
+  const [diagXResult, completeDiagX] = checkDiagonalX(board, row, col, current);
 
-  count = count + checkDiagonalY(board, row, col, current);
+  count = count + diagXResult;
+
+  if (completeDiagX) {
+    pointPositions.push(completeDiagX);
+  }
+
+  const [diagYResult, completeDiagY] = checkDiagonalY(board, row, col, current);
+
+  count = count + diagYResult;
+
+  if (completeDiagY) {
+    pointPositions.push(completeDiagY);
+  }
+
+  console.log(count);
+  console.log(pointPositions);
 
   return count;
 }
