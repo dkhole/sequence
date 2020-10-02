@@ -6,7 +6,6 @@ import Card from './card.js';
 //So its impossible(? - at least for me) to find a non brute-force solution
 
 export default function Board(props) {
-  console.table(props.simBoard);
   return (
     <div id="board-wrapper">
       <Card className="card corner"></Card>

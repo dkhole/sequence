@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './cards.css';
 import Board from './board.js';
+import checkPoint from './checkWin.js';
 
 import PlayArea from './playArea.js';
 
@@ -11,6 +12,34 @@ const virtBoard = new Array(10);
 for (let i = 0; i < 10; i++) {
   virtBoard[i] = new Array(10);
 }
+
+virtBoard[3][3] = 0;
+virtBoard[2][2] = 0;
+
+virtBoard[4][4] = 0;
+
+virtBoard[2][4] = 0;
+virtBoard[3][4] = 0;
+
+virtBoard[3][5] = 0;
+virtBoard[2][6] = 0;
+
+virtBoard[5][5] = 0;
+virtBoard[6][6] = 0;
+
+virtBoard[5][4] = 0;
+virtBoard[6][4] = 0;
+
+virtBoard[5][3] = 0;
+virtBoard[6][2] = 0;
+
+virtBoard[4][2] = 0;
+virtBoard[4][3] = 0;
+
+virtBoard[4][5] = 0;
+virtBoard[4][6] = 0;
+
+console.log(checkPoint(virtBoard, 4, 4));
 
 function Game() {
   const [simBoard, setSimBoard] = useState(virtBoard);

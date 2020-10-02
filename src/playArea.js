@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Deck from './deck.js';
 import Card from './card.js';
 
@@ -6,7 +6,7 @@ function PlayerHand(props) {
   //put all symbols into key-value tree? maybe add through css
   //card spades-2
   return (
-    <div id="player-hand">
+    <div className={props.handClass}>
       {props.currPlayer.hand.map((card, index) => {
         let cardClass = 'player-card ';
         cardClass = cardClass.concat(card.suit);
@@ -29,6 +29,8 @@ function PlayerHand(props) {
 
 export default function PlayArea(props) {
   const [gameStart, setStart] = useState(false);
+  const [isHidden, setHidden] = useState(true);
+  const [handClass, setHandClass] = useState('player-hand');
 
   function clickPlay(e) {
     setStart(true);
@@ -88,17 +90,37 @@ export default function PlayArea(props) {
 
     props.setCurrent({ ...props.currPlayer, col: color });
   }*/
+
+  function toggleHand() {
+    if (isHidden) {
+      setHandClass('player-hand show');
+      setHidden(false);
+    } else {
+      setHandClass('player-hand');
+      setHidden(true);
+    }
+  }
+
+  useEffect(() => {
+    setHandClass('player-hand');
+    setHidden(true);
+  }, [props.currPlayer]);
+
   if (gameStart === true) {
     return (
       <div id="play-area">
         <div id="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
         <div id="deck-count">{`Remaining in deck: ${props.deck.length}`}</div>
         <PlayerHand
+          handClass={handClass}
           currPlayer={props.currPlayer}
           clickCard={clickCard}
           circleClass={props.circleClass}
           setCircleClass={props.setCircleClass}
         />
+        <button id="toggle-hand" onClick={toggleHand}>
+          Show/Hide Hand
+        </button>
       </div>
     );
   }

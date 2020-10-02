@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { playCard } from './deck';
+import checkPoint from './checkWin.js';
 
 function getCardInfo(className) {
   const cardInfo = className.slice(5, className.length);
@@ -23,7 +24,6 @@ export default function Card(props) {
     //remove red jack from hand and update deck
     let card = {};
     for (let i = 0; i < props.currPlayer.hand.length; i++) {
-      console.log(props.currPlayer.hand[i]);
       if (
         props.currPlayer.hand[i].value === 'j' &&
         (props.currPlayer.hand[i].suit === 'hearts' ||
@@ -67,8 +67,16 @@ export default function Card(props) {
     }
 
     const iString = cardIndex.toString();
-    const row = parseInt(iString.charAt(0));
-    const col = parseInt(iString.charAt(1));
+    let row = 0;
+    let col = 0;
+
+    if (iString.length === 1) {
+      row = 0;
+      col = parseInt(iString.charAt(0));
+    } else {
+      row = parseInt(iString.charAt(0));
+      col = parseInt(iString.charAt(1));
+    }
 
     const board = props.simBoard.slice();
 
@@ -96,6 +104,9 @@ export default function Card(props) {
       props.updateDeck(newDeck);
       props.setPlayer1({ ...props.player1, hand: newHand });
       props.setCurrent(props.player2);
+
+      //have to add points to player and update according to return value of check point
+      checkPoint(board, row, col);
     } else {
       const [newHand, newDeck] = playCard(card, props.player2.hand, props.deck);
       board[row][col] = 1;
@@ -104,6 +115,9 @@ export default function Card(props) {
       props.updateDeck(newDeck);
       props.setPlayer2({ ...props.player2, hand: newHand });
       props.setCurrent(props.player1);
+
+      //have to add points to player and update according to return value of check point
+      checkPoint(board, row, col);
     }
     setTaken(true);
     props.setSelected('');

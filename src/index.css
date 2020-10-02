@@ -53,11 +53,26 @@ body,
   top: 350px;
 }
 
-#player-hand {
+.player-hand {
   position: relative;
   top: 500px;
   display: flex;
   justify-content: center;
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+#toggle-hand {
+  position: relative;
+  top: 650px;
+  height: 50px;
+  width: 250px;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
 }
 
 #play-now {
@@ -71,8 +86,9 @@ body,
   border-radius: 15px;
 }
 
-#play-now:hover {
+button:hover {
   background-color: rgb(159, 114, 218);
+  color: white;
 }
 
 #p1-col {
