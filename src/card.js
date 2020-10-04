@@ -12,6 +12,22 @@ function getCardInfo(className) {
   return card;
 }
 
+function indexToRowCol(cardIndex) {
+  const iString = cardIndex.toString();
+  let row = 0;
+  let col = 0;
+
+  if (iString.length === 1) {
+    row = 0;
+    col = parseInt(iString.charAt(0));
+  } else {
+    row = parseInt(iString.charAt(0));
+    col = parseInt(iString.charAt(1));
+  }
+
+  return [row, col];
+}
+
 export default function Card(props) {
   const styleSelected = {};
   const [circCol, setCol] = useState('');
@@ -80,17 +96,7 @@ export default function Card(props) {
       cardIndex++;
     }
 
-    const iString = cardIndex.toString();
-    let row = 0;
-    let col = 0;
-
-    if (iString.length === 1) {
-      row = 0;
-      col = parseInt(iString.charAt(0));
-    } else {
-      row = parseInt(iString.charAt(0));
-      col = parseInt(iString.charAt(1));
-    }
+    const [row, col] = indexToRowCol(cardIndex);
 
     if (props.selected === 'all') {
       for (let i = 0; i < props.currPlayer.hand.length; i++) {
@@ -114,7 +120,6 @@ export default function Card(props) {
       board[row][col] = 0;
       //update hand and deck
 
-      props.setSimBoard(board);
       props.updateDeck(newDeck);
       props.setCurrent(props.player2);
 
@@ -127,11 +132,21 @@ export default function Card(props) {
       setPointPos(p);
       const points = props.player1.points + count;
       props.setPlayer1({ ...props.player1, hand: newHand, points: points });
+
+      console.log(
+        `pointPositions > --> ${pointPositions} | ${pointPositions.length} <--<length`
+      );
+      for (let i = 0; i < pointPositions.length; i++) {
+        const [virtRow, virtCol] = indexToRowCol(pointPositions[i]);
+        board[virtRow][virtCol] = 2;
+      }
+      console.table(board);
+
+      props.setSimBoard(board);
     } else {
       const [newHand, newDeck] = playCard(card, props.player2.hand, props.deck);
       board[row][col] = 1;
 
-      props.setSimBoard(board);
       props.updateDeck(newDeck);
       props.setCurrent(props.player1);
 
@@ -143,6 +158,14 @@ export default function Card(props) {
       setPointPos(p);
       const points = props.player2.points + count;
       props.setPlayer2({ ...props.player2, hand: newHand, points: points });
+
+      for (let i = 0; i < pointPositions.length; i++) {
+        const [virtRow, virtCol] = indexToRowCol(pointPositions[i].toString());
+        board[virtRow][virtCol] = 3;
+      }
+      console.table(board);
+
+      props.setSimBoard(board);
     }
     setTaken(true);
     props.setSelected('');

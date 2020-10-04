@@ -13,6 +13,13 @@ for (let i = 0; i < 10; i++) {
   virtBoard[i] = new Array(10);
 }
 
+//set up corners
+
+virtBoard[0][0] = -1;
+virtBoard[0][9] = -1;
+virtBoard[9][0] = -1;
+virtBoard[9][9] = -1;
+
 /*virtBoard[3][3] = 0;
 virtBoard[2][2] = 0;
 

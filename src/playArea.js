@@ -41,22 +41,24 @@ export default function PlayArea(props) {
     //const player2Hand = Deck.deal(shuffledDeck);
 
     const player1Hand = [
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'hearts' },
+      { value: 'a', suit: 'diamonds' },
+      { value: 'k', suit: 'diamonds' },
+      { value: 'q', suit: 'diamonds' },
+      { value: '10', suit: 'diamonds' },
       { value: '9', suit: 'diamonds' },
-      { value: '8', suit: 'clubs' },
+      { value: '10', suit: 'spades' },
+      { value: '9', suit: 'spades' },
+      { value: '8', suit: 'spades' },
       { value: '7', suit: 'spades' },
     ];
     const player2Hand = [
       { value: 'j', suit: 'spades' },
       { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'hearts' },
-      { value: '8', suit: 'hearts' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
+      { value: 'a', suit: 'diamonds' },
+      { value: 'k', suit: 'diamonds' },
+      { value: 'q', suit: 'diamonds' },
+      { value: '10', suit: 'diamonds' },
+      { value: '9', suit: 'diamonds' },
     ];
 
     //get input colors

@@ -10,7 +10,7 @@ function convertToPos(row, col) {
 
 function checkCol(board, row, col, current) {
   let count = 1;
-  let complete = new Array(5);
+  let complete = [];
   let index = 0;
 
   complete[index] = convertToPos(row, col);
@@ -18,10 +18,13 @@ function checkCol(board, row, col, current) {
 
   for (let i = 1; i < 5; i++) {
     if (row + i <= 9) {
-      if (board[row + i][col] === current) {
+      if (board[row + i][col] === current || board[row + i][col] < 0) {
         complete[index] = convertToPos(row + i, col);
         index++;
         count++;
+      } else if (board[row + i][col] === current + 2) {
+        count++;
+        break;
       } else {
         break;
       }
@@ -30,10 +33,13 @@ function checkCol(board, row, col, current) {
 
   for (let i = 1; i < 5; i++) {
     if (row - i >= 0) {
-      if (board[row - i][col] === current) {
+      if (board[row - i][col] === current || board[row - i][col] < 0) {
         complete[index] = convertToPos(row - i, col);
         index++;
         count++;
+      } else if (board[row - i][col] === current + 2) {
+        count++;
+        break;
       } else {
         break;
       }
@@ -49,7 +55,7 @@ function checkCol(board, row, col, current) {
 
 function checkRow(board, row, col, current) {
   let count = 1;
-  let complete = new Array(5);
+  let complete = [];
   let index = 0;
 
   complete[index] = convertToPos(row, col);
@@ -57,10 +63,13 @@ function checkRow(board, row, col, current) {
 
   for (let i = 1; i < 5; i++) {
     if (col + i <= 9) {
-      if (board[row][col + i] === current) {
+      if (board[row][col + i] === current || board[row][col + i] < 0) {
         complete[index] = convertToPos(row, col + i);
         index++;
         count++;
+      } else if (board[row][col + i] === current + 2) {
+        count++;
+        break;
       } else {
         break;
       }
@@ -69,10 +78,13 @@ function checkRow(board, row, col, current) {
 
   for (let i = 1; i < 5; i++) {
     if (col - i >= 0) {
-      if (board[row][col - i] === current) {
+      if (board[row][col - i] === current || board[row][col - i] < 0) {
         complete[index] = convertToPos(row, col - i);
         index++;
         count++;
+      } else if (board[row][col - i] === current + 2) {
+        count++;
+        break;
       } else {
         break;
       }
@@ -88,7 +100,7 @@ function checkRow(board, row, col, current) {
 
 function checkDiagonalX(board, row, col, current) {
   let count = 1;
-  let complete = new Array(5);
+  let complete = [];
   let index = 0;
 
   complete[index] = convertToPos(row, col);
@@ -96,7 +108,7 @@ function checkDiagonalX(board, row, col, current) {
   //top right (-row, +col)
   for (let i = 1; i < 5; i++) {
     if (col + i <= 9 && row - i >= 0) {
-      if (board[row - i][col + i] === current) {
+      if (board[row - i][col + i] === current || board[row - i][col + i] < 0) {
         complete[index] = convertToPos(row - i, col + i);
         index++;
         count++;
@@ -109,7 +121,7 @@ function checkDiagonalX(board, row, col, current) {
   //bottom left (+row, -col)
   for (let i = 1; i < 5; i++) {
     if (col - i >= 0 && row + i <= 9) {
-      if (board[row + i][col - i] === current) {
+      if (board[row + i][col - i] === current || board[row + i][col - i] < 0) {
         complete[index] = convertToPos(row + i, col - i);
         index++;
         count++;
@@ -128,7 +140,7 @@ function checkDiagonalX(board, row, col, current) {
 
 function checkDiagonalY(board, row, col, current) {
   let count = 1;
-  let complete = new Array(5);
+  let complete = [];
   let index = 0;
 
   complete[index] = convertToPos(row, col);
@@ -137,7 +149,7 @@ function checkDiagonalY(board, row, col, current) {
   //top left (-row, -col)
   for (let i = 1; i < 5; i++) {
     if (col - i >= 0 && row - i >= 0) {
-      if (board[row - i][col - i] === current) {
+      if (board[row - i][col - i] === current || board[row - i][col - i] < 0) {
         complete[index] = convertToPos(row - i, col - i);
         index++;
         count++;
@@ -150,7 +162,7 @@ function checkDiagonalY(board, row, col, current) {
   // bottom right (+row, +col)
   for (let i = 1; i < 5; i++) {
     if (col + i <= 9 && row + i <= 9) {
-      if (board[row + i][col + i] === current) {
+      if (board[row + i][col + i] === current || board[row + i][col + i] < 0) {
         complete[index] = convertToPos(row + i, col + i);
         index++;
         count++;
@@ -172,8 +184,6 @@ export default function checkPoint(board, row, col) {
   let pointPositions = [];
   //count is 1 as it includes placed checker
   let count = 0;
-  //check col, row, diagonal
-  console.table(board);
 
   //check col
   const [colResult, completeCol] = checkCol(board, row, col, current);
@@ -209,8 +219,6 @@ export default function checkPoint(board, row, col) {
   if (completeDiagY) {
     pointPositions = pointPositions.concat(completeDiagY);
   }
-
-  console.log(pointPositions);
 
   return [count, pointPositions];
 }
