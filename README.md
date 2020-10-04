@@ -8,5 +8,6 @@
     - Array of index values of completed 5-in-a-row (done)
     - Keep them in a hook and useEffect to call function everytime hook is updated
     - callback function will iterate through array get target.parent.children[index] and change its className
+    - Also need to update virtual board
   - Need to update functions to include corner pieces
 - Add winning screen

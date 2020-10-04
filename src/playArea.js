@@ -44,17 +44,17 @@ export default function PlayArea(props) {
       { value: 'j', suit: 'spades' },
       { value: 'j', suit: 'spades' },
       { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'hearts' },
+      { value: '9', suit: 'diamonds' },
+      { value: '8', suit: 'clubs' },
+      { value: '7', suit: 'spades' },
     ];
     const player2Hand = [
       { value: 'j', suit: 'spades' },
       { value: 'j', suit: 'spades' },
       { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
-      { value: 'j', suit: 'spades' },
+      { value: 'j', suit: 'hearts' },
+      { value: '8', suit: 'hearts' },
       { value: 'j', suit: 'spades' },
       { value: 'j', suit: 'spades' },
     ];

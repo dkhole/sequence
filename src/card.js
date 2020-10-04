@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { playCard } from './deck';
 import checkPoint from './checkWin.js';
 
@@ -16,6 +16,20 @@ export default function Card(props) {
   const styleSelected = {};
   const [circCol, setCol] = useState('');
   const [taken, setTaken] = useState(false);
+  const [pointPos, setPointPos] = useState([]);
+
+  useEffect(() => {
+    //loop through point pos, for every item in point pos
+    //iterate through each position and change its classname using children[index]
+    const board = document.getElementById('board-wrapper');
+
+    for (let i = 0; i < pointPos.length; i++) {
+      for (let z = 0; z < pointPos[i].length; z++) {
+        const pos = pointPos[i][z];
+        board.children[pos].children[1].className = 'circle point';
+      }
+    }
+  }, [pointPos, props.circleClass]);
 
   function remCircle(e) {
     e.target.style.visibility = 'hidden';
@@ -78,8 +92,6 @@ export default function Card(props) {
       col = parseInt(iString.charAt(1));
     }
 
-    const board = props.simBoard.slice();
-
     if (props.selected === 'all') {
       for (let i = 0; i < props.currPlayer.hand.length; i++) {
         if (
@@ -95,6 +107,8 @@ export default function Card(props) {
       card = getCardInfo(e.target.parentElement.className);
     }
 
+    const board = props.simBoard.slice();
+
     if (props.currPlayer.p === 1) {
       const [newHand, newDeck] = playCard(card, props.player1.hand, props.deck);
       board[row][col] = 0;
@@ -106,8 +120,12 @@ export default function Card(props) {
 
       //have to update checkpoint to return [points, completed], then store completed in a hook
       //add a useeffect to hook so that whenever its updated every card from completed has a changed class name
-      const points = props.player1.points + checkPoint(board, row, col);
-      console.log('points1:' + points);
+      //also need to update virtual board
+      const [count, pointPositions] = checkPoint(board, row, col);
+      const p = pointPos.slice();
+      p.push(pointPositions);
+      setPointPos(p);
+      const points = props.player1.points + count;
       props.setPlayer1({ ...props.player1, hand: newHand, points: points });
     } else {
       const [newHand, newDeck] = playCard(card, props.player2.hand, props.deck);
@@ -119,8 +137,11 @@ export default function Card(props) {
 
       //have to update checkpoint to return [points, completed], then store completed in a hook
       //add a useeffect to hook so that whenever its updated every card from completed has a changed class name
-      const points = props.player2.points + checkPoint(board, row, col);
-      console.log('points2:' + points);
+      const [count, pointPositions] = checkPoint(board, row, col);
+      const p = pointPos.slice();
+      p.push(pointPositions);
+      setPointPos(p);
+      const points = props.player2.points + count;
       props.setPlayer2({ ...props.player2, hand: newHand, points: points });
     }
     setTaken(true);

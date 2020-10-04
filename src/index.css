@@ -164,6 +164,14 @@ button:hover {
   border: 2px solid grey;
 }
 
+.point {
+  height: 30px;
+  width: 30px;
+  color: purple;
+  border: 10px solid orange;
+  pointer-events: none;
+}
+
 .circle:active {
   pointer-events: none;
 }
