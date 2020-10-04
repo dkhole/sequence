@@ -133,14 +133,10 @@ export default function Card(props) {
       const points = props.player1.points + count;
       props.setPlayer1({ ...props.player1, hand: newHand, points: points });
 
-      console.log(
-        `pointPositions > --> ${pointPositions} | ${pointPositions.length} <--<length`
-      );
       for (let i = 0; i < pointPositions.length; i++) {
         const [virtRow, virtCol] = indexToRowCol(pointPositions[i]);
         board[virtRow][virtCol] = 2;
       }
-      console.table(board);
 
       props.setSimBoard(board);
     } else {
@@ -163,7 +159,6 @@ export default function Card(props) {
         const [virtRow, virtCol] = indexToRowCol(pointPositions[i].toString());
         board[virtRow][virtCol] = 3;
       }
-      console.table(board);
 
       props.setSimBoard(board);
     }

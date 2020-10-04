@@ -67,6 +67,56 @@ function Game() {
   const [currPlayer, setCurrent] = useState(player1);
   const [circleClass, setCircleClass] = useState('circle');
 
+  if (player1.points >= 2) {
+    return (
+      <div id="game-wrap">
+        <div id="board-area">
+          <Board
+            selected={selected}
+            setSelected={setSelected}
+            setCurrent={setCurrent}
+            currPlayer={currPlayer}
+            setPlayer1={setPlayer1}
+            player1={player1}
+            setPlayer2={setPlayer2}
+            player2={player2}
+            deck={deck}
+            updateDeck={updateDeck}
+            circleClass={circleClass}
+            setCircleClass={setCircleClass}
+            simBoard={simBoard}
+            setSimBoard={setSimBoard}
+          />
+        </div>
+        <div id="play-area"> WINWINMOTHERFUCKER</div>
+      </div>
+    );
+  } else if (player2.points >= 2) {
+    return (
+      <div id="game-wrap">
+        <div id="board-area">
+          <Board
+            selected={selected}
+            setSelected={setSelected}
+            setCurrent={setCurrent}
+            currPlayer={currPlayer}
+            setPlayer1={setPlayer1}
+            player1={player1}
+            setPlayer2={setPlayer2}
+            player2={player2}
+            deck={deck}
+            updateDeck={updateDeck}
+            circleClass={circleClass}
+            setCircleClass={setCircleClass}
+            simBoard={simBoard}
+            setSimBoard={setSimBoard}
+          />
+        </div>
+        <div id="play-area"> WINWINMOTHERFUCKER</div>
+      </div>
+    );
+  }
+
   return (
     <div id="game-wrap">
       <div id="board-area">

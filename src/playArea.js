@@ -41,15 +41,15 @@ export default function PlayArea(props) {
     //const player2Hand = Deck.deal(shuffledDeck);
 
     const player1Hand = [
-      { value: 'a', suit: 'diamonds' },
-      { value: 'k', suit: 'diamonds' },
-      { value: 'q', suit: 'diamonds' },
-      { value: '10', suit: 'diamonds' },
-      { value: '9', suit: 'diamonds' },
-      { value: '10', suit: 'spades' },
-      { value: '9', suit: 'spades' },
-      { value: '8', suit: 'spades' },
-      { value: '7', suit: 'spades' },
+      { value: '6', suit: 'clubs' },
+      { value: '5', suit: 'clubs' },
+      { value: '4', suit: 'clubs' },
+      { value: '3', suit: 'clubs' },
+      { value: '2', suit: 'clubs' },
+      { value: 'a', suit: 'hearts' },
+      { value: 'q', suit: 'hearts' },
+      { value: 'k', suit: 'hearts' },
+      { value: '10', suit: 'hearts' },
     ];
     const player2Hand = [
       { value: 'j', suit: 'spades' },
@@ -62,8 +62,8 @@ export default function PlayArea(props) {
     ];
 
     //get input colors
-    const p1Col = e.target.parentElement.children[2].value;
-    const p2Col = e.target.parentElement.children[3].value;
+    const p1Col = e.target.parentElement.children[6].value;
+    const p2Col = e.target.parentElement.children[7].value;
 
     props.setPlayer1({ ...props.player1, hand: player1Hand, col: p1Col });
     props.setPlayer2({ ...props.player2, hand: player2Hand, col: p2Col });
@@ -130,10 +130,14 @@ export default function PlayArea(props) {
   if (gameStart === true) {
     return (
       <div id="play-area">
-        <div id="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
+        <div class="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
+        <div id="p1-points" style={{ color: props.player1.col }}>
+          P1: {props.player1.points}
+        </div>
+        <div id="p2-points" style={{ color: props.player2.col }}>
+          P2: {props.player2.points}
+        </div>
         <div id="deck-count">{`Remaining in deck: ${props.deck.length}`}</div>
-        <div id="p1-points">P1: {props.player1.points}</div>
-        <div id="p2-points">P2: {props.player2.points}</div>
         <PlayerHand
           handClass={handClass}
           currPlayer={props.currPlayer}
@@ -150,11 +154,31 @@ export default function PlayArea(props) {
 
   return (
     <div id="play-area">
-      <div id="play-title">SEQUENCE</div>
-      <div id="play-description">
-        Use your cards to place checkers onto the board.<br></br> Link 5
-        checkers in a row to get a point, first to 2 points win.
+      <div className="play-title">SEQUENCE</div>
+      <div className="play-description">
+        Use your cards to place checkers onto the board.
       </div>
+      <div className="play-description two">
+        Link 5 checkers in a row to get a point, first to 2 points win.
+      </div>
+
+      <div className="jack-rule">
+        <b>Black Jacks</b> let you place a chip anywhere on the board.
+      </div>
+      <div className="jack-rule three">
+        <span id="jack">Red Jacks</span> let you remove any chip on the board.
+      </div>
+
+      <div className="extra-rules">
+        Corners act as a neutral shared 'wild' piece for each side.<br></br>
+        Once a 5-in-a-row is achieved you cannot remove from the set <br></br>
+        You cannot use more than one chip from a complete set to create another
+        5-in-a-row <br></br>
+        Meaning 9 in a row will amount to 2 points. <br></br>
+        Choose colors that contrast well with the board. You cannot change once
+        the game starts
+      </div>
+
       <input type="color" id="p1-col" defaultValue="#00ff1e"></input>
       <input type="color" id="p2-col" defaultValue="#FF00D7"></input>
       <button id="play-now" onClick={clickPlay}>
