@@ -22,9 +22,14 @@ function checkCol(board, row, col, current) {
         complete[index] = convertToPos(row + i, col);
         index++;
         count++;
-      } else if (board[row + i][col] === current + 2) {
+      } else if (
+        board[row + i][col] === current + 2 &&
+        board[row + i + 1][col] === current + 2
+      ) {
         count++;
         break;
+      } else if (board[row + i][col] === current + 2) {
+        count++;
       } else {
         break;
       }
@@ -37,9 +42,14 @@ function checkCol(board, row, col, current) {
         complete[index] = convertToPos(row - i, col);
         index++;
         count++;
-      } else if (board[row - i][col] === current + 2) {
+      } else if (
+        board[row - i][col] === current + 2 &&
+        board[row - i - 1][col] === current + 2
+      ) {
         count++;
         break;
+      } else if (board[row - i][col] === current + 2) {
+        count++;
       } else {
         break;
       }
@@ -67,9 +77,14 @@ function checkRow(board, row, col, current) {
         complete[index] = convertToPos(row, col + i);
         index++;
         count++;
-      } else if (board[row][col + i] === current + 2) {
+      } else if (
+        board[row][col + i] === current + 2 &&
+        board[row][col + i + 1] === current + 2
+      ) {
         count++;
         break;
+      } else if (board[row][col + i] === current + 2) {
+        count++;
       } else {
         break;
       }
@@ -82,9 +97,14 @@ function checkRow(board, row, col, current) {
         complete[index] = convertToPos(row, col - i);
         index++;
         count++;
-      } else if (board[row][col - i] === current + 2) {
+      } else if (
+        board[row][col - i] === current + 2 &&
+        board[row][col - i - 1] === current + 2
+      ) {
         count++;
         break;
+      } else if (board[row][col - i] === current + 2) {
+        count++;
       } else {
         break;
       }
@@ -112,6 +132,14 @@ function checkDiagonalX(board, row, col, current) {
         complete[index] = convertToPos(row - i, col + i);
         index++;
         count++;
+      } else if (
+        board[row - i][col + i] === current + 2 &&
+        board[row - i - 1][col + i + 1] === current + 2
+      ) {
+        count++;
+        break;
+      } else if (board[row - i][col + i] === current + 2) {
+        count++;
       } else {
         break;
       }
@@ -124,6 +152,14 @@ function checkDiagonalX(board, row, col, current) {
       if (board[row + i][col - i] === current || board[row + i][col - i] < 0) {
         complete[index] = convertToPos(row + i, col - i);
         index++;
+        count++;
+      } else if (
+        board[row + i][col - i] === current + 2 &&
+        board[row + i + 1][col - i - 1] === current + 2
+      ) {
+        count++;
+        break;
+      } else if (board[row + i][col - i] === current + 2) {
         count++;
       } else {
         break;
@@ -153,6 +189,14 @@ function checkDiagonalY(board, row, col, current) {
         complete[index] = convertToPos(row - i, col - i);
         index++;
         count++;
+      } else if (
+        board[row - i][col - i] === current + 2 &&
+        board[row - i - 1][col - i - 1] === current + 2
+      ) {
+        count++;
+        break;
+      } else if (board[row - i][col - i] === current + 2) {
+        count++;
       } else {
         break;
       }
@@ -165,6 +209,14 @@ function checkDiagonalY(board, row, col, current) {
       if (board[row + i][col + i] === current || board[row + i][col + i] < 0) {
         complete[index] = convertToPos(row + i, col + i);
         index++;
+        count++;
+      } else if (
+        board[row + i][col + i] === current + 2 &&
+        board[row + i + 1][col + i + 1] === current + 2
+      ) {
+        count++;
+        break;
+      } else if (board[row + i][col + i] === current + 2) {
         count++;
       } else {
         break;

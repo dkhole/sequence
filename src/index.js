@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './cards.css';
 import Board from './board.js';
-import checkPoint from './checkWin.js';
-
+import PlayerWon from './PlayerWon.js';
 import PlayArea from './playArea.js';
 
 const virtBoard = new Array(10);
@@ -88,7 +87,12 @@ function Game() {
             setSimBoard={setSimBoard}
           />
         </div>
-        <div id="play-area"> WINWINMOTHERFUCKER</div>
+        <PlayerWon
+          winner={player1}
+          player1={player1}
+          player2={player2}
+          deck={deck}
+        />
       </div>
     );
   } else if (player2.points >= 2) {
@@ -112,7 +116,12 @@ function Game() {
             setSimBoard={setSimBoard}
           />
         </div>
-        <div id="play-area"> WINWINMOTHERFUCKER</div>
+        <PlayerWon
+          winner={player2}
+          player1={player1}
+          player2={player2}
+          deck={deck}
+        />
       </div>
     );
   }

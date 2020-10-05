@@ -49,7 +49,7 @@ export default function PlayArea(props) {
       { value: 'a', suit: 'hearts' },
       { value: 'q', suit: 'hearts' },
       { value: 'k', suit: 'hearts' },
-      { value: '10', suit: 'hearts' },
+      { value: '6', suit: 'diamonds' },
     ];
     const player2Hand = [
       { value: 'j', suit: 'spades' },
@@ -130,7 +130,7 @@ export default function PlayArea(props) {
   if (gameStart === true) {
     return (
       <div id="play-area">
-        <div class="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
+        <div className="play-title">{`PLAYER ${props.currPlayer.p}`}</div>
         <div id="p1-points" style={{ color: props.player1.col }}>
           P1: {props.player1.points}
         </div>
