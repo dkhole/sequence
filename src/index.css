@@ -10,10 +10,10 @@ body,
 
 #board-area {
   height: 100%;
-  width: 50%;
+  width: 60%;
   position: relative;
   float: left;
-  background-color: black;
+  background-color: #100e17;
 }
 
 #board-wrapper {
@@ -23,15 +23,16 @@ body,
   left: 0;
   right: 0;
   margin: auto;
-  height: 95%;
-  width: 95%;
+  height: 96.5%;
+  width: 96.5%;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  grid-gap: 20px;
 }
 
 #play-area {
   height: 100%;
-  width: 50%;
+  width: 40%;
   float: left;
   text-align: center;
   background-color: black;
@@ -176,34 +177,49 @@ body,
 }
 
 .card {
-  height: 60px;
   text-align: center;
   padding: 0;
-  font-size: 375%;
+  background-color: #17141d;
+  border: 5px solid;
+  border-radius: 10px;
   color: rgb(97, 191, 223);
+  min-height: 52px;
+  font-size: 150%;
+  line-height: 50px;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
 .card:hover {
   color: yellowgreen;
+  border-color: yellowgreen;
+  box-shadow: 0 0 11px rgb(33, 33, 33);
 }
 
 .player-card {
-  height: 110px;
-  font-size: 500%;
+  height: 90px;
+  width: 80px;
+  background-color: white;
+  border: 2px solid black;
   cursor: pointer;
   color: rgb(97, 191, 223);
+  font-size: 150%;
+  line-height: 90px;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.5);
+  border-radius: 7px;
 }
 
 .player-card:hover {
   color: yellowgreen;
+  border-color: yellowgreen;
+  box-shadow: 0 0 11px rgb(33, 33, 33);
 }
 
 .player-card:not(:first-child) {
-  margin-left: -5px;
+  margin-left: -15px;
 }
 
 .player-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
   transition: 0.4s ease-out;
 }
 
@@ -214,7 +230,8 @@ body,
 }
 
 .symbol {
-  position: relative;
+  height: 100%;
+  font-size: 150%;
 }
 
 .circle:hover {
@@ -222,11 +239,11 @@ body,
 }
 
 .circle {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   border-radius: 100%;
   position: relative;
-  top: -65px;
+  top: -52px;
   margin: auto;
   visibility: hidden;
   border: 2px solid grey;

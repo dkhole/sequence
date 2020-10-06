@@ -171,6 +171,7 @@ export default function Card(props) {
     (props.selected === 'all' && taken === false)
   ) {
     styleSelected.color = 'yellow';
+    styleSelected.borderColor = 'yellow';
     styleSelected.cursor = 'pointer';
 
     return (
@@ -179,7 +180,7 @@ export default function Card(props) {
         style={styleSelected}
         onClick={placeChip}
       >
-        <div className="symbol">{props.children}</div>
+        <div className="symbol"></div>
         <div
           className={props.circleClass}
           style={{
@@ -197,7 +198,7 @@ export default function Card(props) {
       style={styleSelected}
       onClick={props.clickCard}
     >
-      <div className="symbol">{props.children}</div>
+      <div className="symbol"></div>
       <div
         className={props.circleClass}
         style={{ backgroundColor: circCol }}

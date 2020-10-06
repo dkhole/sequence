@@ -12,313 +12,339 @@
 }
 
 .spades-a > .symbol::before {
-  content: '🂡';
+  content: 'A ♠️';
 }
 
 .spades-2 > .symbol::before {
-  content: '🂢';
+  content: '2 ♠️';
 }
 
 .spades-3 > .symbol::before {
-  content: '🂣';
+  content: '3 ♠️';
 }
 
 .spades-4 > .symbol::before {
-  content: '🂤';
+  content: '4 ♠️';
 }
 
 .spades-5 > .symbol::before {
-  content: '🂥';
+  content: '5 ♠️';
 }
 
 .spades-6 > .symbol::before {
-  content: '🂦';
+  content: '6 ♠️';
 }
 
 .spades-7 > .symbol::before {
-  content: '🂧';
+  content: '7 ♠️';
 }
 
 .spades-8 > .symbol::before {
-  content: '🂨';
+  content: '8 ♠️';
 }
 
 .spades-9 > .symbol::before {
-  content: '🂩';
+  content: '9 ♠️';
 }
 
 .spades-10 > .symbol::before {
-  content: '🂪';
+  content: '10 ♠️';
 }
 
 .spades-j > .symbol::before {
-  content: '🂫';
+  content: 'J ♠️';
 }
 
 .spades-q > .symbol::before {
-  content: '🂭';
+  content: 'Q ♠️';
 }
 
 .spades-k > .symbol::before {
-  content: '🂮';
+  content: 'K ♠️';
 }
 
 .clubs-a > .symbol::before {
-  content: '🃑';
+  content: 'A ♣️';
 }
 
 .clubs-2 > .symbol::before {
-  content: '🃒';
+  content: '2 ♣️';
 }
 
 .clubs-3 > .symbol::before {
-  content: '🃓';
+  content: '3 ♣️';
 }
 
 .clubs-4 > .symbol::before {
-  content: '🃔';
+  content: '4 ♣️';
 }
 
 .clubs-5 > .symbol::before {
-  content: '🃕';
+  content: '5 ♣️';
 }
 
 .clubs-6 > .symbol::before {
-  content: '🃖';
+  content: '6 ♣️';
 }
 
 .clubs-7 > .symbol::before {
-  content: '🃗';
+  content: '7 ♣️';
 }
 
 .clubs-8 > .symbol::before {
-  content: '🃘';
+  content: '8 ♣️';
 }
 
 .clubs-9 > .symbol::before {
-  content: '🃙';
+  content: '9 ♣️';
 }
 
 .clubs-10 > .symbol::before {
-  content: '🃚';
+  content: '10 ♣️';
 }
 
 .clubs-j > .symbol::before {
-  content: '🃛';
+  content: 'J ♣️';
 }
 
 .clubs-q > .symbol::before {
-  content: '🃝';
+  content: 'Q ♣️';
 }
 
 .clubs-k > .symbol::before {
-  content: '🃞';
+  content: 'K ♣️';
 }
 
 .hearts-a > .symbol::before {
-  content: '🂱';
+  content: 'A ♥️';
 }
 
 .hearts-a {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-2 > .symbol::before {
-  content: '🂲';
+  content: '2 ♥️';
 }
 
 .hearts-2 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-3 > .symbol::before {
-  content: '🂳';
+  content: '3 ♥️';
 }
 
 .hearts-3 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-4 > .symbol::before {
-  content: '🂴';
+  content: '4 ♥️';
 }
 
 .hearts-4 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-5 > .symbol::before {
-  content: '🂵';
+  content: '5 ♥️';
 }
 
 .hearts-5 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-6 > .symbol::before {
-  content: '🂶';
+  content: '6 ♥️';
 }
 
 .hearts-6 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-7 > .symbol::before {
-  content: '🂷';
+  content: '7 ♥️';
 }
 
 .hearts-7 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-8 > .symbol::before {
-  content: '🂸';
+  content: '8 ♥️';
 }
 
 .hearts-8 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-9 > .symbol::before {
-  content: '🂹';
+  content: '9 ♥️';
 }
 
 .hearts-9 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-10 > .symbol::before {
-  content: '🂺';
+  content: '10 ♥️';
 }
 
 .hearts-10 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-j > .symbol::before {
-  content: '🂻';
+  content: 'J ♥️';
 }
 
 .hearts-j {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-q > .symbol::before {
-  content: '🂽';
+  content: 'Q ♥️';
 }
 
 .hearts-q {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .hearts-k > .symbol::before {
-  content: '🂾';
+  content: 'K ♥️';
 }
 
 .hearts-k {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-a > .symbol::before {
-  content: '🃁';
+  content: 'A ♦️';
 }
 
 .diamonds-a {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-2 > .symbol::before {
-  content: '🃂';
+  content: '2 ♦️';
 }
 
 .diamonds-2 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-3 > .symbol::before {
-  content: '🃃';
+  content: '3 ♦️';
 }
 
 .diamonds-3 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-4 > .symbol::before {
-  content: '🃄';
+  content: '4 ♦️';
 }
 
 .diamonds-4 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-5 > .symbol::before {
-  content: '🃅';
+  content: '5 ♦️';
 }
 
 .diamonds-5 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-6 > .symbol::before {
-  content: '🃆';
+  content: '6 ♦️';
 }
 
 .diamonds-6 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-7 > .symbol::before {
-  content: '🃇';
+  content: '7 ♦️';
 }
 
 .diamonds-7 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-8 > .symbol::before {
-  content: '🃈';
+  content: '8 ♦️';
 }
 
 .diamonds-8 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-9 > .symbol::before {
-  content: '🃉';
+  content: '9 ♦️';
 }
 
 .diamonds-9 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-10 > .symbol::before {
-  content: '🃊';
+  content: '10 ♦️';
 }
 
 .diamonds-10 {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-j > .symbol::before {
-  content: '🃋';
+  content: 'J ♦️';
 }
 
 .diamonds-j {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-q > .symbol::before {
-  content: '🃍';
+  content: 'Q ♦️';
 }
 
 .diamonds-q {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
 
 .diamonds-k > .symbol::before {
-  content: '🃎';
+  content: 'K ♦️';
 }
 
 .diamonds-k {
   color: var(--main-redCard-col);
+  border-color: var(--main-redCard-col);
 }
