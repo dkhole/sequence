@@ -10,7 +10,7 @@ body,
 
 #board-area {
   height: 100%;
-  width: 60%;
+  width: 50%;
   position: relative;
   float: left;
   background-color: #100e17;
@@ -27,12 +27,12 @@ body,
   width: 96.5%;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-gap: 20px;
+  grid-gap: 15px;
 }
 
 #play-area {
   height: 100%;
-  width: 40%;
+  width: 50%;
   float: left;
   text-align: center;
   background-color: black;
@@ -42,7 +42,7 @@ body,
 .play-title {
   position: relative;
   top: 75px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 10px;
   font-weight: bold;
   color: yellow;
@@ -93,7 +93,7 @@ body,
 
 .player-hand {
   position: relative;
-  top: 425px;
+  top: 400px;
   display: flex;
   justify-content: center;
   visibility: hidden;
@@ -105,7 +105,7 @@ body,
 
 #toggle-hand {
   position: relative;
-  top: 500px;
+  top: 450px;
   height: 50px;
   width: 250px;
   font-size: 1.1rem;
@@ -126,7 +126,7 @@ body,
   position: relative;
   top: 250px;
   right: 200px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -135,7 +135,7 @@ body,
   top: 210px;
   left: 650px;
   width: 100px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -180,12 +180,12 @@ body,
   text-align: center;
   padding: 0;
   background-color: #17141d;
-  border: 5px solid;
+  border: 3px solid;
   border-radius: 10px;
   color: rgb(97, 191, 223);
   min-height: 52px;
-  font-size: 150%;
-  line-height: 50px;
+  font-size: 125%;
+  line-height: 55px;
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
@@ -231,7 +231,6 @@ body,
 
 .symbol {
   height: 100%;
-  font-size: 150%;
 }
 
 .circle:hover {
