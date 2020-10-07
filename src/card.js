@@ -85,11 +85,19 @@ export default function Card(props) {
     if (taken) {
       return;
     }
-    e.target.parentElement.children[1].style.visibility = 'visible';
-    setCol(props.currPlayer.col);
 
+    let current;
+
+    if (e.target.className.slice(0, 4) === 'card') {
+      e.target.children[1].style.visibility = 'visible';
+      current = e.target;
+    } else {
+      e.target.parentElement.children[1].style.visibility = 'visible';
+      current = e.target.parentElement;
+    }
+
+    setCol(props.currPlayer.col);
     let card = {};
-    let current = e.target.parentElement;
     let cardIndex = 0;
 
     while ((current = current.previousSibling) != null) {
