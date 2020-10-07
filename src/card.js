@@ -173,6 +173,7 @@ export default function Card(props) {
     styleSelected.color = 'yellow';
     styleSelected.borderColor = 'yellow';
     styleSelected.cursor = 'pointer';
+    styleSelected.boxShadow = '0 0 11px yellow';
 
     return (
       <div

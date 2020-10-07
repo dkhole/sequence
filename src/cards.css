@@ -5,10 +5,14 @@
 }
 .corner {
   color: rgb(3, 189, 3);
+  font-size: 250%;
+  box-shadow: 0 0 11px rgb(3, 189, 3);
+  text-shadow: 0 0 11px rgb(3, 189, 3);
+  line-height: 50px;
 }
 
 .corner > .symbol::before {
-  content: '🃟';
+  content: '☆';
 }
 
 .spades-a > .symbol::before {
@@ -122,6 +126,8 @@
 .hearts-a {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-2 > .symbol::before {
@@ -131,6 +137,8 @@
 .hearts-2 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-3 > .symbol::before {
@@ -140,6 +148,8 @@
 .hearts-3 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 200px var(--main-redCard-col);
 }
 
 .hearts-4 > .symbol::before {
@@ -149,6 +159,8 @@
 .hearts-4 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-5 > .symbol::before {
@@ -158,6 +170,8 @@
 .hearts-5 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-6 > .symbol::before {
@@ -167,6 +181,8 @@
 .hearts-6 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-7 > .symbol::before {
@@ -176,6 +192,8 @@
 .hearts-7 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-8 > .symbol::before {
@@ -185,6 +203,8 @@
 .hearts-8 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-9 > .symbol::before {
@@ -194,6 +214,8 @@
 .hearts-9 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-10 > .symbol::before {
@@ -203,6 +225,8 @@
 .hearts-10 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-j > .symbol::before {
@@ -212,6 +236,8 @@
 .hearts-j {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-q > .symbol::before {
@@ -221,6 +247,8 @@
 .hearts-q {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .hearts-k > .symbol::before {
@@ -230,6 +258,8 @@
 .hearts-k {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-a > .symbol::before {
@@ -239,6 +269,8 @@
 .diamonds-a {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-2 > .symbol::before {
@@ -248,6 +280,8 @@
 .diamonds-2 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-3 > .symbol::before {
@@ -257,6 +291,8 @@
 .diamonds-3 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-4 > .symbol::before {
@@ -266,6 +302,8 @@
 .diamonds-4 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-5 > .symbol::before {
@@ -275,6 +313,8 @@
 .diamonds-5 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-6 > .symbol::before {
@@ -284,6 +324,8 @@
 .diamonds-6 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-7 > .symbol::before {
@@ -293,6 +335,8 @@
 .diamonds-7 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-8 > .symbol::before {
@@ -302,6 +346,8 @@
 .diamonds-8 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-9 > .symbol::before {
@@ -311,6 +357,8 @@
 .diamonds-9 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-10 > .symbol::before {
@@ -320,6 +368,8 @@
 .diamonds-10 {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-j > .symbol::before {
@@ -329,6 +379,8 @@
 .diamonds-j {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-q > .symbol::before {
@@ -338,6 +390,8 @@
 .diamonds-q {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
 
 .diamonds-k > .symbol::before {
@@ -347,4 +401,6 @@
 .diamonds-k {
   color: var(--main-redCard-col);
   border-color: var(--main-redCard-col);
+  box-shadow: 0 0 11px var(--main-redCard-col);
+  text-shadow: 0 0 11px var(--main-redCard-col);
 }
