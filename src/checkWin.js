@@ -1,5 +1,3 @@
-//Need to update functions to include corner pieces
-
 function convertToPos(row, col) {
   const strRow = row.toString();
   const strCol = col.toString();
@@ -7,6 +5,9 @@ function convertToPos(row, col) {
   const index = strRow.concat(strCol);
   return index;
 }
+
+//Have to check for win every turn anyway, this means we don't need to check the whole board
+//Just check on every turn, if the current marker is in a 5 in row.
 
 function checkCol(board, row, col, current) {
   let count = 1;

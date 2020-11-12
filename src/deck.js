@@ -8,23 +8,8 @@ export function getDeck() {
   for (let z = 0; z < 2; z++) {
     for (let i = 0; i < suits.length; i++) {
       for (let j = 0; j < values.length; j++) {
-        //disregagrd 2j and 1 j for now just make reds vs blacks
-        /*if (
-          values[j] === 'j' &&
-          (suits[i] === 'hearts' || suits[i] === 'diamonds')
-        ) {
-          const card = { value: '2j', suit: suits[i] };
-          deck.push(card);
-        } else if (
-          values[j] === 'j' &&
-          (suits[i] === 'clubs' || suits[i] === 'spades')
-        ) {
-          const card = { value: '1j', suit: suits[i] };
-          deck.push(card);
-        } else {*/
         const card = { value: values[j], suit: suits[i] };
         deck.push(card);
-        //}
       }
     }
   }

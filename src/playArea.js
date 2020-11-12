@@ -3,8 +3,6 @@ import * as Deck from './deck.js';
 import Card from './card.js';
 
 function PlayerHand(props) {
-  //put all symbols into key-value tree? maybe add through css
-  //card spades-2
   return (
     <div className={props.handClass}>
       {props.currPlayer.hand.map((card, index) => {
@@ -37,9 +35,11 @@ export default function PlayArea(props) {
 
     const newDeck = Deck.getDeck();
     const shuffledDeck = Deck.shuffle(newDeck);
-    //const player1Hand = Deck.deal(shuffledDeck);
-    //const player2Hand = Deck.deal(shuffledDeck);
+    const player1Hand = Deck.deal(shuffledDeck);
+    const player2Hand = Deck.deal(shuffledDeck);
 
+    //for Testing
+    /*
     const player1Hand = [
       { value: '6', suit: 'clubs' },
       { value: '5', suit: 'clubs' },
@@ -59,7 +59,7 @@ export default function PlayArea(props) {
       { value: 'q', suit: 'diamonds' },
       { value: '10', suit: 'diamonds' },
       { value: '9', suit: 'diamonds' },
-    ];
+    ];*/
 
     //get input colors
     const p1Col = e.target.parentElement.children[6].value;

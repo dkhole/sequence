@@ -19,34 +19,6 @@ virtBoard[0][9] = -1;
 virtBoard[9][0] = -1;
 virtBoard[9][9] = -1;
 
-/*virtBoard[3][3] = 0;
-virtBoard[2][2] = 0;
-
-virtBoard[4][4] = 0;
-
-virtBoard[2][4] = 0;
-virtBoard[3][4] = 0;
-
-virtBoard[3][5] = 0;
-virtBoard[2][6] = 0;
-
-virtBoard[5][5] = 0;
-virtBoard[6][6] = 0;
-
-virtBoard[5][4] = 0;
-virtBoard[6][4] = 0;
-
-virtBoard[5][3] = 0;
-virtBoard[6][2] = 0;
-
-virtBoard[4][2] = 0;
-virtBoard[4][3] = 0;
-
-virtBoard[4][5] = 0;
-virtBoard[4][6] = 0;
-
-console.log(checkPoint(virtBoard, 4, 4));*/
-
 function Game() {
   const [simBoard, setSimBoard] = useState(virtBoard);
   const [selected, setSelected] = useState('');
